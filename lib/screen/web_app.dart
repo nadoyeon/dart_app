@@ -28,6 +28,16 @@ class web_app extends StatelessWidget {
         backgroundColor: Colors.red,
         title: Text('Code Factory'),
         centerTitle: true,
+        /// web view 를 통해서, 이동한 다음, 홈 화면으로 되돌아갈 때 사용하는 버튼 생성
+        actions: [
+          IconButton(
+              onPressed: (){
+                controller.loadRequest(homeUrl);
+              }, /// 눌렀을 때 실행되는 함수 정의 (콜백함수)
+              icon: Icon(
+                  Icons.home, /// flutter에 기본 내장된 아이콘 사용하기
+              ),)
+        ],
       ),
       body: WebViewWidget(
         controller: controller,
